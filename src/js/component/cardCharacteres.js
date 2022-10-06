@@ -14,8 +14,8 @@ function CardChacarteres(props){
 
   console.log(isfav)
 
-  const favorites = (Name, url) => {
-    isfav === true ? actions.HandleFavorites(Name, url) : actions.DeleteFavorites(Name, url)
+  const favorites = (Name, url, type) => {
+    isfav === true ? actions.HandleFavorites(Name, url, type) : actions.DeleteFavorites(Name, url, type)
   }
 
     return (
@@ -27,7 +27,7 @@ function CardChacarteres(props){
             <Link to="/singleCharacter">
                 <button onClick={props.learnMore} className="btn btn-primary" >Learn More</button>
             </Link>
-            <button type="button" className="btn border border-warning" onClick={() => {SetIsfav(!isfav); favorites(props.Name, props.url)}}><span className="text-warning">&#9825;</span></button>
+            <button type="button" className="btn border border-warning" onClick={() => {SetIsfav(!isfav); favorites(props.Name, props.url, props.type)}}><span className="text-warning">&#9825;</span></button>
           </div>
         </div>
     );
@@ -45,6 +45,7 @@ CardChacarteres.propTypes = {
   delfav: PropTypes.func,
   Name: PropTypes.string,
   url: PropTypes.string,
+  type: PropTypes.string,
   // CounterFav: PropTypes.func
 };
 

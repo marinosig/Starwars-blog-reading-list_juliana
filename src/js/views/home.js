@@ -89,6 +89,7 @@ export const Home = () => {
 			// delfav={() => {actions.DeleteFavorites(item.name, item.url)}}
 			Name={item.name}
 			url={item.url}
+			type={"Character"}
 			/>
 			</div>)
 })

@@ -32,9 +32,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					planets: [data], }))
 			},
 
-			HandleFavorites: (name, url) => {
+			HandleFavorites: (name, url, type) => {
 				setStore({
-					favorites: [...getStore().favorites, {"Name": name, "Url": url}]
+					favorites: [...getStore().favorites, {"Name": name, "Url": url, "Type": type}]
 				});
 				console.log("hello", getStore().favorites)		
 			},
